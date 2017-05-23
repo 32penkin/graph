@@ -37,7 +37,10 @@ class Graph {
   }
 
   removeEdge(from, to) {
-
+    if (this.hasNode(from) && this.hasNode(from)) {
+      delete this.nodes[from].edges[to];
+      delete this.nodes[to].edges[from];
+    }
   }
 
   hasEdge(from, to) {
