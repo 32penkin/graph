@@ -68,4 +68,8 @@ describe('Graph', () => {
     // });
   });
 
+  describe('#addNode', () => {
+
+  });
+
 });

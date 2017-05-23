@@ -55,3 +55,11 @@ const graph1 = new Graph({matrix: true}, arr);
 // initList.forEach(item => {
 //   console.log(item);
 // });
+
+const gr333 = new Graph();
+
+gr333.addNode('node2');
+gr333.addNode('node3');
+gr333.addEdge('node2', 'node3');
+
+console.log(gr333);

@@ -1,7 +1,10 @@
 class Graph {
   constructor(options, initData) {
     this.nodes = {};
-    if(options.matrix) {
+    if(!options && !initData) {
+      this.simpleInit();
+    }
+    else if(options.matrix) {
       this.matrixInit(initData)
     } else {
       this.listInit(initData);
@@ -37,6 +40,10 @@ class Graph {
   }
 
   listInit(list) {
+
+  }
+
+  simpleInit() {
 
   }
 }
