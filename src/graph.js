@@ -2,13 +2,8 @@ class Graph {
   constructor(options, initData) {
     this.nodes = {};
 
-    if (!options && !initData) {
-      this.simpleInit();
-    } else if (options.matrix) {
-      this.matrixInit(initData)
-    } else if (options.list) {
-      this.listInit(initData);
-    }
+    if (!options && !initData) this.simpleInit();
+    else this.otherInit(options, initData);
   }
 
   addNode(data) {
@@ -65,7 +60,7 @@ class Graph {
   listInit(arrOfList) {
     for (let i = 0; i < arrOfList.length; i++) {
       this.addNode(arrOfList[i].head.data);
-      for(let j = 0; j < callback(arrOfList[i]).length; j++){
+      for (let j = 0; j < callback(arrOfList[i]).length; j++) {
         this.addEdge(arrOfList[i].head.data, callback(arrOfList[i])[j]);
       }
     }
@@ -91,6 +86,14 @@ class Graph {
   printGraph() {
     for (let key in this.nodes) {
       console.log(key + ': ', this.nodes[key]);
+    }
+  }
+
+  otherInit(options, initData) {
+    if (options.matrix) {
+      this.matrixInit(initData)
+    } else if (options.list) {
+      this.listInit(initData);
     }
   }
 }

@@ -22,5 +22,8 @@
     "mocha": "3.0.2",
     "sinon": "1.17.5",
     "sinon-chai": "2.8.0"
+  },
+  "dependencies": {
+    "doubly-linked-list": "github:32penkin/doubly-linked-list"
   }
 }

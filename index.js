@@ -1,6 +1,6 @@
 const Graph = require('./src/graph');
 const DoublyLinkedList = require('./node_modules/dllpenk/src/doubly-linked-list');
-
+// const DoublyLinkedList = require('doubly-linked-list');
 
 // for(let i = 0; i < arr.length; i++) {
 //   for(let j = 0; j < arr.length; j++) {
