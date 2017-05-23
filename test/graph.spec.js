@@ -125,4 +125,26 @@ describe('Graph', () => {
     });
   });
 
+  describe('#addEdge, #hasEdge', () => {
+    const gr1 = new Graph();
+
+    gr1.addNode('node1');
+    gr1.addNode('node2');
+    gr1.addNode('node3');
+    gr1.addEdge('node1', 'node2');
+    gr1.addEdge('node1', 'node3');
+
+    it('check if edge was added', () => {
+      expect(gr1.addEdge('node1', 'node2')).to.equal(true);
+    });
+
+    it('check if edge was added', () => {
+      expect(gr1.addEdge('node1', 'node3')).to.equal(true);
+    });
+
+    it('check if edge was added', () => {
+      expect(gr1.addEdge('node2', 'node3')).to.equal(false);
+    });
+  });
+
 });
