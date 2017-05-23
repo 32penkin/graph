@@ -12,7 +12,9 @@ class Graph {
   }
 
   addNode(data) {
-
+    this.nodes[data] = {
+      edges: {}
+    };
   }
 
   removeNode(data) {
@@ -20,7 +22,7 @@ class Graph {
   }
 
   hasNode(data) {
-
+    return this.nodes[data] ? true : false;
   }
 
   addEdge(from, to) {

@@ -72,7 +72,7 @@ describe('Graph', () => {
     const gr1 = new Graph();
 
     gr1.addNode('node1');
-    gr1.addEdge('node2');
+    gr1.addNode('node2');
     gr1.addNode('node3');
 
     it('check if nodes was added (1)', () => {
