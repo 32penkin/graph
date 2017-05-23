@@ -74,9 +74,9 @@ list4.append('node3');
 
 const initList = [list0, list1, list2, list3, list4];
 
-const gr3 = new Graph({list: true}, initList);
+const graph = new Graph({list: true}, initList);
 
-gr3.printGraph();
+graph.printGraph();
 
 
 
