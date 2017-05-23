@@ -1,5 +1,5 @@
 class Graph {
-  constructor() {
+  constructor(options, initData) {
 
   }
 
