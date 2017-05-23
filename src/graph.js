@@ -18,7 +18,11 @@ class Graph {
   }
 
   removeNode(data) {
+    for (let conNode in this.nodes[data].edges) {
+      this.removeEdge(data, conNode);
+    }
 
+    delete this.nodes[data];
   }
 
   hasNode(data) {
