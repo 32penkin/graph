@@ -48,7 +48,18 @@ class Graph {
   }
 
   matrixInit(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      this.addNode('node' + (i));
+    }
 
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr.length; j++) {
+        if (arr[i][j] == 1) {
+          this.addEdge('node' + i, 'node' + j);
+        }
+      }
+    }
+    return this;
   }
 
   listInit(list) {
