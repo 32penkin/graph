@@ -147,4 +147,25 @@ describe('Graph', () => {
     });
   });
 
+  describe('#removeEdge', () => {
+    const gr1 = new Graph();
+
+    gr1.addNode('node1');
+    gr1.addNode('node2');
+    gr1.addNode('node3');
+    gr1.addEdge('node1', 'node2');
+    gr1.addEdge('node1', 'node3');
+
+    gr1.removeEdge('node1', 'node2');
+    gr1.removeEdge('node1', 'node3');
+
+    it('check if edge deleted', () => {
+      expect(gr1.hasEdge('node1', 'node2')).to.equal(false);
+    });
+
+    it('check if edge removed', () => {
+      expect(gr1.hasEdge('node1', 'node3')).to.equal(false);
+    });
+  });
+
 });
