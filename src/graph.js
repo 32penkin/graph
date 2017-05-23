@@ -1,10 +1,10 @@
 class Graph {
   constructor(options, initData) {
     this.nodes = {};
+
     if (!options && !initData) {
       this.simpleInit();
-    }
-    else if (options.matrix) {
+    } else if (options.matrix) {
       this.matrixInit(initData)
     } else if (options.list) {
       this.listInit(initData);
@@ -26,7 +26,7 @@ class Graph {
   }
 
   hasNode(data) {
-    return this.nodes[data] ? true : false;
+    return !!this.nodes[data];
   }
 
   addEdge(from, to) {
@@ -44,7 +44,7 @@ class Graph {
   }
 
   hasEdge(from, to) {
-    return this.nodes[from].edges[to] ? true : false;
+    return !!this.nodes[from].edges[to];
   }
 
   matrixInit(arr) {
@@ -63,7 +63,25 @@ class Graph {
   }
 
   listInit(arrOfList) {
+    for (let i = 0; i < arrOfList.length; i++) {
+      this.addNode(arrOfList[i].head.data);
+      for(let j = 0; j < callback(arrOfList[i]).length; j++){
+        this.addEdge(arrOfList[i].head.data, callback(arrOfList[i])[j]);
+      }
+    }
 
+    function callback(list) {
+      let current = list.head;
+      let i = 1;
+      let tempArr = [];
+      while (i < list.length) {
+        tempArr.push(list.get(i));
+        i++;
+      }
+      return tempArr;
+    }
+
+    return this;
   }
 
   simpleInit() {
