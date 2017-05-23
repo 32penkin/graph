@@ -168,4 +168,40 @@ describe('Graph', () => {
     });
   });
 
+  describe('#matrixInit', () => {
+    const gr1 = new Graph();
+
+    gr1.addNode('node0');
+    gr1.addNode('node1');
+    gr1.addNode('node2');
+    gr1.addNode('node3');
+    gr1.addNode('node4');
+
+
+    gr1.addEdge('node0', 'node1');
+    gr1.addEdge('node0', 'node2');
+    gr1.addEdge('node1', 'node0');
+    gr1.addEdge('node1', 'node4');
+    gr1.addEdge('node2', 'node0');
+    gr1.addEdge('node2', 'node4');
+    gr1.addEdge('node3', 'node4');
+    gr1.addEdge('node4', 'node1');
+    gr1.addEdge('node4', 'node1');
+    gr1.addEdge('node4', 'node1');
+
+    const arr = [
+      [0 ,1, 1, 0, 0],
+      [1, 0, 0, 0, 1],
+      [1, 0, 0, 0, 1],
+      [0, 0, 0, 0, 1],
+      [0, 1, 1, 1, 0]
+    ];
+
+    const gr2 = new Graph({matrix: true}, arr);
+
+    it('comparison of objects created in different ways', () => {
+      expect(gr1.toString() == gr2.toString()).to.equal(true);
+    });
+  });
+
 });

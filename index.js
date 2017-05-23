@@ -1,13 +1,7 @@
 const Graph = require('./src/graph');
 const DoublyLinkedList = require('./node_modules/dllpenk/src/doubly-linked-list');
 
-const arr = [
-  [0 ,1, 1, 0, 0],
-  [1, 0, 0, 0, 1],
-  [1, 0, 0, 0, 1],
-  [0, 0, 0, 0, 1],
-  [0, 1, 1, 1, 0]
-];
+
 const graph1 = new Graph({matrix: true}, arr);
 
 
@@ -58,12 +52,38 @@ const graph1 = new Graph({matrix: true}, arr);
 
 const gr1 = new Graph();
 
+gr1.addNode('node0');
 gr1.addNode('node1');
 gr1.addNode('node2');
 gr1.addNode('node3');
-gr1.addEdge('node1', 'node2');
-gr1.addEdge('node1', 'node3');
+gr1.addNode('node4');
 
-console.log(gr1.hasEdge('node1', 'node2'));
-console.log(gr1.hasEdge('node1', 'node3'));
-console.log(gr1.hasEdge('node2', 'node3'));
+
+gr1.addEdge('node0', 'node1');
+gr1.addEdge('node0', 'node2');
+gr1.addEdge('node1', 'node0');
+gr1.addEdge('node1', 'node4');
+gr1.addEdge('node2', 'node0');
+gr1.addEdge('node2', 'node4');
+gr1.addEdge('node3', 'node4');
+gr1.addEdge('node4', 'node1');
+gr1.addEdge('node4', 'node1');
+gr1.addEdge('node4', 'node1');
+
+const arr = [
+  [0 ,1, 1, 0, 0],
+  [1, 0, 0, 0, 1],
+  [1, 0, 0, 0, 1],
+  [0, 0, 0, 0, 1],
+  [0, 1, 1, 1, 0]
+];
+
+const gr2 = new Graph({matrix: true}, arr);
+
+gr1.printGraph();
+console.log('-----------------------------------------------------');
+gr2.printGraph();
+console.log('-----------------------------------------------------');
+console.log(gr1.toString() === gr2.toString());
+
+

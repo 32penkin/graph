@@ -56,7 +56,13 @@ class Graph {
   }
 
   simpleInit() {
+    this.nodes = {};
+  }
 
+  printGraph() {
+    for(let key in this.nodes) {
+      console.log(key + ': ', this.nodes[key]);
+    }
   }
 }
 
