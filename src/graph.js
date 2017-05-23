@@ -1,12 +1,12 @@
 class Graph {
   constructor(options, initData) {
     this.nodes = {};
-    if(!options && !initData) {
+    if (!options && !initData) {
       this.simpleInit();
     }
-    else if(options.matrix) {
+    else if (options.matrix) {
       this.matrixInit(initData)
-    } else {
+    } else if (options.list) {
       this.listInit(initData);
     }
   }
@@ -62,7 +62,7 @@ class Graph {
     return this;
   }
 
-  listInit(list) {
+  listInit(arrOfList) {
 
   }
 
@@ -71,7 +71,7 @@ class Graph {
   }
 
   printGraph() {
-    for(let key in this.nodes) {
+    for (let key in this.nodes) {
       console.log(key + ': ', this.nodes[key]);
     }
   }
