@@ -135,15 +135,15 @@ describe('Graph', () => {
     gr1.addEdge('node1', 'node3');
 
     it('check if edge was added', () => {
-      expect(gr1.addEdge('node1', 'node2')).to.equal(true);
+      expect(gr1.hasEdge('node1', 'node2')).to.equal(true);
     });
 
     it('check if edge was added', () => {
-      expect(gr1.addEdge('node1', 'node3')).to.equal(true);
+      expect(gr1.hasEdge('node1', 'node3')).to.equal(true);
     });
 
     it('check if edge was added', () => {
-      expect(gr1.addEdge('node2', 'node3')).to.equal(false);
+      expect(gr1.hasEdge('node2', 'node3')).to.equal(false);
     });
   });
 

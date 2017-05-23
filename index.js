@@ -56,10 +56,14 @@ const graph1 = new Graph({matrix: true}, arr);
 //   console.log(item);
 // });
 
-const gr333 = new Graph();
+const gr1 = new Graph();
 
-gr333.addNode('node2');
-gr333.addNode('node3');
-gr333.addEdge('node2', 'node3');
+gr1.addNode('node1');
+gr1.addNode('node2');
+gr1.addNode('node3');
+gr1.addEdge('node1', 'node2');
+gr1.addEdge('node1', 'node3');
 
-console.log(gr333);
+console.log(gr1.hasEdge('node1', 'node2'));
+console.log(gr1.hasEdge('node1', 'node3'));
+console.log(gr1.hasEdge('node2', 'node3'));

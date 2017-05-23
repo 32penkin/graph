@@ -30,7 +30,10 @@ class Graph {
   }
 
   addEdge(from, to) {
-
+    if (this.hasNode(from) && this.hasNode(to)) {
+      this.nodes[from].edges[to] = true;
+      this.nodes[to].edges[from] = true;
+    }
   }
 
   removeEdge(from, to) {
@@ -38,7 +41,7 @@ class Graph {
   }
 
   hasEdge(from, to) {
-
+    return this.nodes[from].edges[to] ? true : false;
   }
 
   matrixInit(arr) {
