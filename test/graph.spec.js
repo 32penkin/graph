@@ -92,4 +92,37 @@ describe('Graph', () => {
     });
   });
 
+  describe('#removeNode', () => {
+    const gr1 = new Graph();
+
+    gr1.addNode('node1');
+    gr1.addNode('node2');
+    gr1.addNode('node3');
+
+    gr1.removeNode('node2');
+
+    it('check if nodes was added (1)', () => {
+      expect(gr1.hasNode('node1')).to.equal(true);
+    });
+
+    it('check if nodes2 was removed (2)', () => {
+      expect(gr1.hasNode('node2')).to.equal(false);
+    });
+
+    it('check if nodes was added (3)', () => {
+      expect(gr1.hasNode('node3')).to.equal(true);
+    });
+
+    it('check if nodes was added (4)', () => {
+      expect(gr1.hasNode('node4')).to.equal(false);
+    });
+
+    it('check if nodes was added (5)', () => {
+      gr1.removeNode('node1');
+      gr1.removeNode('node3');
+      expect(gr1.hasNode('node1')).to.equal(false);
+      expect(gr1.hasNode('node3')).to.equal(false);
+    });
+  });
+
 });
