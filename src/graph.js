@@ -1,6 +1,11 @@
 class Graph {
   constructor(options, initData) {
-
+    this.nodes = {};
+    if(options.matrix) {
+      this.matrixInit(initData)
+    } else {
+      this.listInit(initData);
+    }
   }
 
   addNode(data) {
